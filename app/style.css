@@ -1,0 +1,180 @@
+@define-color mint_green #86BE43;
+@define-color mint_green_dark #5C8A2C;
+@define-color acc_lila #9C8AA4;
+@define-color acc_amatista #9966CC;
+@define-color acc_ciruela #8E4585;
+@define-color bg_base #111411;
+@define-color bg_panel #181c17;
+@define-color fg_text #E8EDE4;
+@define-color fg_muted #8B968B;
+
+window, .background {
+    background-color: @bg_base;
+    color: @fg_text;
+    font-family: "Space Mono", "JetBrains Mono", "Ubuntu Mono", monospace;
+}
+
+headerbar {
+    background: linear-gradient(110deg, @bg_panel 0%, #201a24 55%, @bg_panel 100%);
+    border-bottom: 1px solid alpha(@acc_amatista, 0.4);
+    box-shadow: none;
+}
+
+headerbar .title {
+    font-family: "Orbitron", "Share Tech Mono", monospace;
+    letter-spacing: 2px;
+    color: @mint_green;
+    text-shadow: 1px 0 @acc_amatista, -1px 0 @acc_ciruela;
+}
+
+headerbar .subtitle {
+    font-family: "Share Tech Mono", monospace;
+    color: @acc_lila;
+    letter-spacing: 1px;
+}
+
+stacksidebar, .sidebar {
+    background-color: @bg_panel;
+    border-right: 1px solid alpha(@acc_lila, 0.25);
+}
+
+stackswitcher button {
+    font-family: "Share Tech Mono", monospace;
+    letter-spacing: 1px;
+    color: @fg_muted;
+    background: transparent;
+    border-radius: 0;
+    padding: 6px 12px;
+}
+
+stackswitcher button:checked {
+    color: @bg_base;
+    background-color: @mint_green;
+    box-shadow: 3px 0 0 alpha(@acc_amatista, 0.6);
+}
+
+button {
+    background-color: @bg_panel;
+    color: @fg_text;
+    border: 1px solid alpha(@mint_green, 0.5);
+    border-radius: 2px;
+    padding: 5px 10px;
+    transition: background-color 90ms ease-out, border-color 90ms ease-out, color 90ms ease-out;
+}
+
+button:hover {
+    border-color: @acc_amatista;
+    box-shadow: 0 0 0 1px alpha(@acc_amatista, 0.4);
+}
+
+/* glitch de click: destello corto en un acento distinto al soltar el mouse */
+button:active {
+    background-color: @acc_ciruela;
+    border-color: @acc_lila;
+    color: @fg_text;
+    transition: background-color 20ms linear, border-color 20ms linear;
+}
+
+stackswitcher button:active {
+    background-color: @acc_amatista;
+    color: @fg_text;
+}
+
+button.suggested-action, button.glitch-primary {
+    background-color: @mint_green;
+    color: #0c0f0c;
+    border: none;
+}
+
+button.glitch-primary:hover {
+    background-color: @acc_amatista;
+    color: @fg_text;
+}
+
+/* GtkToggleButton "prendido": pisa el naranja/azul que trae el tema base por defecto */
+togglebutton:checked, button:checked {
+    background-color: @acc_amatista;
+    color: @fg_text;
+    border-color: @acc_amatista;
+}
+
+.track-title {
+    font-family: "Orbitron", "Share Tech Mono", monospace;
+    font-size: 20px;
+    color: @fg_text;
+}
+
+.track-artist {
+    color: @acc_amatista;
+    font-size: 13px;
+}
+
+.extra-info {
+    color: @fg_muted;
+    font-size: 11.5px;
+}
+
+frame, .glitch-frame {
+    border: 1px solid alpha(@acc_ciruela, 0.4);
+    border-radius: 2px;
+}
+
+scale trough {
+    background-color: @bg_panel;
+    border: 1px solid alpha(@mint_green, 0.3);
+}
+
+scale highlight {
+    background-color: @mint_green;
+}
+
+treeview {
+    background-color: @bg_base;
+    color: @fg_text;
+}
+
+treeview:selected {
+    background-color: alpha(@acc_amatista, 0.35);
+}
+
+treeview header button {
+    background-color: @bg_panel;
+    color: @acc_lila;
+    font-size: 11px;
+}
+
+.ghost-overlay {
+    background-color: alpha(#000000, 0.55);
+    border: 1px solid alpha(@mint_green, 0.5);
+    border-radius: 6px;
+}
+
+.ghost-label {
+    color: @fg_text;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 11px;
+}
+
+.favorite-on {
+    color: @acc_amatista;
+    font-size: 30px;
+    padding: 0 6px;
+    border: none;
+    background: transparent;
+}
+
+.favorite-off {
+    color: @fg_muted;
+    font-size: 30px;
+    padding: 0 6px;
+    border: none;
+    background: transparent;
+    opacity: 0.55;
+}
+
+.favorite-off:hover, .favorite-on:hover {
+    background: transparent;
+    box-shadow: none;
+    color: @acc_amatista;
+    opacity: 1;
+}

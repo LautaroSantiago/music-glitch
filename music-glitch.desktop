@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=music-glitch
+Comment=Reproductor de música con estética glitch
+Exec=python3 /ruta/completa/a/music-glitch/main.py
+Icon=/ruta/completa/a/music-glitch/assets/icons/puma-256.png
+Terminal=false
+Categories=AudioVideo;Audio;Player;
